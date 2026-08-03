@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Distance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px auto;
+            max-width: 500px;
+            background-color: #f8f9fa;
+        }
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #0056b3; }
+        .back-btn {
+            margin-bottom: 15px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .back-btn:hover { background-color: #555; }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">&larr; Back to index</button>
+
+    <div class="card">
+        <h2>Check Distance from University</h2>
+        <p>Calculate distance using formula: <i>Distance = &radic;(x&sup2; + y&sup2;)</i></p>
+
+        <div class="input-group">
+            <label for="xInput">X Coordinate (km):</label>
+            <input type="number" id="xInput" placeholder="e.g. 3" step="any">
+        </div>
+
+        <div class="input-group">
+            <label for="yInput">Y Coordinate (km):</label>
+            <input type="number" id="yInput" placeholder="e.g. 4" step="any">
+        </div>
+
+        <button id="calcBtn">Check Distance</button>
+
+        <div id="distanceResult" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('calcBtn').addEventListener('click', function() {
+            const xVal = document.getElementById('xInput').value.trim();
+            const yVal = document.getElementById('yInput').value.trim();
+            const resultDiv = document.getElementById('distanceResult');
+
+            const x = parseFloat(xVal);
+            const y = parseFloat(yVal);
+
+            // Validation
+            if (xVal === "" || yVal === "" || isNaN(x) || isNaN(y)) {
+                resultDiv.className = "result error";
+                resultDiv.textContent = "Please enter valid numeric coordinates for both X and Y.";
+                return;
+            }
+
+            // Calculation: Distance = sqrt(x^2 + y^2)
+            const distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+
+            resultDiv.className = "result success";
+            resultDiv.textContent = `You're ${distance.toFixed(2)} km from University.`;
+        });
+    </script>
+
+</body>
+</html>

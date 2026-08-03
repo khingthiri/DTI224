@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculate Grade</title>
+
+<!--Nan Sanda Htun--->
+<!--250702402406-->
+
+<style>
+  .back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  .back-btn:hover {
+    background-color: #555;
+  }
+
+
+  body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 100px 500px;
+    
+  }
+  .conveter-section{
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+  }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .row {
+    margin-bottom: 15px;
+  }
+  input[type="text"] {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 4px 6px;
+    width: 150px;
+  }
+  button {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 5px 14px;
+    margin-left: 8px;
+  }
+  #result {
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+  <button class="back-btn" onclick="window.location.href='index.html'">&larr; Back to index</button>
+  <div class="conveter-section">
+    <h1>Calculate Grade</h1>
+
+    <div class="row">
+      <label for="amount">Enter Amount:</label>
+      <input type="text" id="amount" value="85">
+      <button id="submitBtn">Submit</button>
+    </div>
+
+    <p id="result"></p>
+  </div>
+  
+  
+  <script>
+    function getGrade(score) {
+      if (score >= 90) return "A";
+      if (score >= 80) return "B";
+      if (score >= 70) return "C";
+      if (score >= 60) return "D";
+      return "F";
+    }
+
+    function calculateGrade() {
+      var input = document.getElementById("amount").value;
+      var score = parseFloat(input);
+      var resultEl = document.getElementById("result");
+
+      if (isNaN(score)) {
+        resultEl.textContent = "Please enter a valid number.";
+        return;
+      }
+
+      var grade = getGrade(score);
+      resultEl.textContent = "You got an " + grade;
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", calculateGrade);
+
+    document.getElementById("amount").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        calculateGrade();
+      }
+    });
+  </script>
+
+</body>
+</html>

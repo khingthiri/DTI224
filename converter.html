@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <!--Nan Sanda Htun-->
+    <!--250702402406-->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px 500px 50px 500px;
+            background-color: #f4f4f4;
+        }
+
+        .converter-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .input-group {
+            margin-top: 5px;
+        }
+
+        input {
+            padding: 3px;
+            width: 90px;
+        }
+
+        button {
+            padding: 2px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .result-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            
+            document.getElementById('lengthBtn').addEventListener('click', function () {
+
+                const inchValue = parseFloat(document.getElementById('inchInput').value);
+                const resultText = document.getElementById('lengthResult');
+
+                if (isNaN(inchValue)) {
+                    resultText.textContent = "Please enter a valid number.";
+                    return;
+                }
+
+                const cmValue = inchValue * 2.54;
+                resultText.textContent = `Equal to ${cmValue.toFixed(2)} cm`;
+            });
+
+
+            
+            document.getElementById('heightBtn').addEventListener('click', function () {
+
+                const feetValue = parseFloat(document.getElementById('heightInput').value);
+                const resultText = document.getElementById('heightResult');
+
+                if (isNaN(feetValue)) {
+                    resultText.textContent = "Please enter a valid number.";
+                    return;
+                }
+
+                const meterValue = feetValue * 0.3048;
+                resultText.textContent = `Equal to ${meterValue.toFixed(2)} meters`;
+            });
+
+
+            
+            document.getElementById('tempBtn').addEventListener('click', function () {
+
+                const fahrenheitValue = parseFloat(document.getElementById('tempInput').value);
+                const resultText = document.getElementById('tempResult');
+
+                if (isNaN(fahrenheitValue)) {
+                    resultText.textContent = "Please enter a valid number.";
+                    return;
+                }
+
+                const celsiusValue = (fahrenheitValue - 32) * 5 / 9;
+                resultText.textContent = `Equal to ${celsiusValue.toFixed(2)} °C`;
+            });
+
+
+            
+            document.getElementById('areaBtn').addEventListener('click', function () {
+
+                const sqFtValue = parseFloat(document.getElementById('areaInput').value);
+                const resultText = document.getElementById('areaResult');
+
+                if (isNaN(sqFtValue)) {
+                    resultText.textContent = "Please enter a valid number.";
+                    return;
+                }
+
+                const sqMeterValue = sqFtValue * 0.092903;
+                resultText.textContent = `Equal to ${sqMeterValue.toFixed(2)} sq meters`;
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <button class="back-btn" onclick="window.location.href='index.html'">&larr; Back to index</button>
+
+    
+    <div class="converter-section">
+        <h1>Length Converter</h1>
+
+        <div class="input-group">
+            <label for="inchInput">Enter Inch:</label>
+            <input type="number" id="inchInput" placeholder="3" step="any">
+            <button id="lengthBtn">Submit</button>
+        </div>
+
+        <p id="lengthResult" class="result-text"></p>
+    </div>
+
+
+    
+    <div class="converter-section">
+        <h1>Height Converter</h1>
+
+        <div class="input-group">
+            <label for="heightInput">Enter Feet:</label>
+            <input type="number" id="heightInput" placeholder="5.5" step="any">
+            <button id="heightBtn">Submit</button>
+        </div>
+
+        <p id="heightResult" class="result-text"></p>
+    </div>
+
+
+    
+    <div class="converter-section">
+        <h1>Temperature Converter</h1>
+
+        <div class="input-group">
+            <label for="tempInput">Enter Fahrenheit:</label>
+            <input type="number" id="tempInput" placeholder="98.6" step="any">
+            <button id="tempBtn">Submit</button>
+        </div>
+
+        <p id="tempResult" class="result-text"></p>
+    </div>
+
+
+    
+    <div class="converter-section">
+        <h1>Area Converter</h1>
+
+        <div class="input-group">
+            <label for="areaInput">Enter Sq Feet:</label>
+            <input type="number" id="areaInput" placeholder="1000" step="any">
+            <button id="areaBtn">Submit</button>
+        </div>
+
+        <p id="areaResult" class="result-text"></p>
+    </div>
+
+</body>
+</html>
