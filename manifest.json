@@ -10,7 +10,7 @@
     {
       "src": "./images.jpg",
       "sizes": "360x360",
-      "types": "image/jpg",
+      "types": "image/jpg"
     }
   ]
 }
