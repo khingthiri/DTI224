@@ -6,7 +6,8 @@ const urlsToCache = [
   '/DTI224/grade.html',
   '/DTI224/change.html',
   '/DTI224/distance.html',
-  '/DTI224/hobby.html'
+  '/DTI224/hobby.html',
+  '/DTI224/images.jpg'
 ];
 
 self.addEventListener('install', event => {
