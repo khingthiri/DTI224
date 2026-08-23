@@ -1,15 +1,16 @@
 {
   "name": "DTI224 Assignment App",
   "short_name": "DTI224",
-  "start_url": "/DTI224/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/DTI224/images.jpg",
+      "src": "./images.jpg",
       "sizes": "360x360",
-      "types": "JPG",
+      "types": "image/jpg",
     }
   ]
 }
