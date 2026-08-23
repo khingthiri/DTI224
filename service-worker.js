@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dti224-cache-v1';
+const CACHE_NAME = 'dti224-cache-v2'; // Updated version name to force cache refresh
 const urlsToCache = [
   './',
   './index.html',
@@ -7,7 +7,7 @@ const urlsToCache = [
   './change.html',
   './distance.html',
   './hobby.html',
-  './images.jpg'
+  './icon.png'
 ];
 
 self.addEventListener('install', event => {
