@@ -9,8 +9,13 @@
   "icons": [
     {
       "src": "./images.jpg",
-      "sizes": "360x360",
-      "types": "image/jpg"
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./images.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
     }
   ]
 }
