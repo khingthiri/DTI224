@@ -1,13 +1,13 @@
 const CACHE_NAME = 'dti224-cache-v1';
 const urlsToCache = [
-  '/DTI224/',
-  '/DTI224/index.html',
-  '/DTI224/converter.html',
-  '/DTI224/grade.html',
-  '/DTI224/change.html',
-  '/DTI224/distance.html',
-  '/DTI224/hobby.html',
-  '/DTI224/images.jpg'
+  './',
+  './index.html',
+  './converter.html',
+  './grade.html',
+  './change.html',
+  './distance.html',
+  './hobby.html',
+  './images.jpg'
 ];
 
 self.addEventListener('install', event => {
